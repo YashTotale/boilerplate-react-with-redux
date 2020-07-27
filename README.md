@@ -11,3 +11,7 @@
 - Additional React tools such as react-hot-loader are added.
 - Folders for actions, reducers, thunks, and selectors are added.
 - a `.gitignore` file is also included
+
+## Contribute
+
+If you want to contribute, please fork the project, make changes, and submit a pull request. If you are new to contributing, [this link](https://github.com/firstcontributions/first-contributions) will help.
