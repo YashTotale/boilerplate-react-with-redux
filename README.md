@@ -14,4 +14,4 @@
 
 ## Contribute
 
-If you want to contribute, please fork the project, make changes, and submit a pull request. If you are new to contributing, [this link](https://github.com/firstcontributions/first-contributions) will help.
+If you want to contribute, please fork the project, make changes, and submit a pull request. Check out [first contributions](https://github.com/firstcontributions/first-contributions) if you are new to contributing.
