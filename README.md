@@ -4,7 +4,7 @@
 
 - Simply clone the project and get started from there
 
-## What's included?
+## What's included
 
 - Webpack, babel, react, and redux are set up
 - Additional Redux tools such as redux-thunk, redux-persist, and redux-devtools-extension are added
