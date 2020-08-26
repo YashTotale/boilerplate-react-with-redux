@@ -11,6 +11,11 @@ import { configureStore } from "./store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/lib/integration/react";
 
+//Material UI Imports
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./theme";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 const store = configureStore();
 const persistor = persistStore(store);
 
@@ -18,7 +23,11 @@ ReactDOM.render(
   <Provider store={store}>
     {/* Persists the store */}
     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-      <App />
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
     </PersistGate>
   </Provider>,
   document.getElementById("root")

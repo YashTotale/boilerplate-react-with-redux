@@ -6,11 +6,11 @@
 
 ## What's included
 
-- Webpack, babel, react, and redux are set up
-- Additional Redux tools such as redux-thunk, redux-persist, and redux-devtools-extension are added
-- Additional React tools such as react-hot-loader are added.
-- Folders for actions, reducers, thunks, and selectors are added.
-- a `.gitignore` file is also included
+- Webpack, babel, react, and redux
+- Material UI (along with a customizable theme)
+- Additional Redux tools such as redux-thunk, redux-persist, and redux-devtools-extension
+- Additional React tools such as react-hot-loader
+- Folders for actions, reducers, thunks, and selectors
 
 ## Contribute
 
