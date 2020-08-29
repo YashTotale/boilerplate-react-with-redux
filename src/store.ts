@@ -23,6 +23,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers(reducers);
+//@ts-ignore
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const configureStore = () =>
