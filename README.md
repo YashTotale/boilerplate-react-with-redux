@@ -2,7 +2,8 @@
 
 ## Setup
 
-- Simply clone the project and get started from there
+- Click on "Use this template"
+- Create a new repository
 
 ## What's included
 
