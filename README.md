@@ -9,8 +9,10 @@
 
 - Webpack, babel, react, and redux
 - Material UI (along with a customizable theme)
-- Additional Redux tools such as redux-thunk, redux-persist, and redux-devtools-extension
+- TypeScript
+- React Router
 - Additional React tools such as react-hot-loader
+- Additional Redux tools such as redux-thunk, redux-persist, and redux-devtools-extension
 - Folders for actions, reducers, thunks, and selectors
 
 ## Contribute
