@@ -5,7 +5,7 @@
 - Click on ["Use this template"](https://github.com/YashTotale/boilerplate-react-with-redux/generate)
 - Create a new repository
 - Clone the repository you created with this template
-- Run the command `npm install`
+- Run `npm install`
 
 ## What's included
 
