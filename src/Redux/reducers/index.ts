@@ -1,21 +1,7 @@
-//Redux Reducers
+import { DisplayState } from "./display.reducers";
 
-/* 
+export { displayReducer as display } from "./display.reducers";
 
-Example:
-
-import { TEST_ACTION } from "../actions";
-
-export const testReducer = (state = { someInitialStateValues }, action) => {
-  const {type, payload} = action;
-  switch(type) {
-    case TEST_ACTION: {
-      const {sampleValue} = payload;
-      return {...state, sampleValue};
-    }
-    default:
-      return state;
-  }
+export interface State {
+  display: DisplayState;
 }
-
-*/

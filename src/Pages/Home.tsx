@@ -1,17 +1,22 @@
 //React Imports
 import React from "react";
+import Navbar from "../Components/Navbar";
 
 //Material UI Imports
-import { makeStyles, Theme } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
   home: {},
 }));
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
   const classes = useStyles();
 
-  return <div className={classes.home}>Home</div>;
+  return (
+    <div className={classes.home}>
+      <Navbar />
+    </div>
+  );
 };
 
-export default HomePage;
+export default Home;

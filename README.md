@@ -9,17 +9,17 @@
 
 ## What's included
 
-- Webpack, babel, react, and redux
-- Material UI (along with a customizable theme)
-- TypeScript
-- React Router
+- [React](https://reactjs.org/) and [Redux](https://redux.js.org/)
+- [Material UI](https://material-ui.com/) (with a customizable theme)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router](https://reactrouter.com/)
+- [Progressive Web App](https://web.dev/progressive-web-apps/)
 - Additional React tools such as [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 - Additional Redux tools such as [redux-thunk](https://github.com/reduxjs/redux-thunk), [redux-persist](https://github.com/rt2zz/redux-persist), and [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- Folders for actions, reducers, thunks, and selectors
 
 ## Usage
 
-- Run `npm run dev`
+- Run `npm start`
 - Open localhost:3000 and see your website
 
 ## Contribute
