@@ -3,11 +3,13 @@ import React from "react";
 
 //Redux Imports
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
 
 //Redux Persist Imports
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+import { PersistGate } from "redux-persist/integration/react";
 
 //Redux Thunk Imports
 import thunk from "redux-thunk";
@@ -17,8 +19,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 //Reducer Imports
 import { display } from "./Redux/reducers";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 
 const reducers = {
   display,
