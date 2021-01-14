@@ -12,4 +12,4 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: "Thank you for contributing to boilerplate-react-with-redux!"
-          pr-message: "Thank you for contributing to {{repo-name}}!"
+          pr-message: "Thank you for contributing to boilerplate-react-with-redux!"
