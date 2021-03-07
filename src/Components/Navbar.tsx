@@ -3,7 +3,7 @@ import React, { FC } from "react";
 
 // Redux Imports
 import { useDispatch } from "react-redux";
-import { toggleDarkMode } from "../Redux/actions";
+import { toggleDarkMode } from "../Redux";
 
 // Material UI Imports
 import {

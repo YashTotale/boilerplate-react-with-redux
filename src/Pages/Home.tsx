@@ -1,5 +1,5 @@
 //React Imports
-import React from "react";
+import React, { FC } from "react";
 import Navbar from "../Components/Navbar";
 
 //Material UI Imports
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   home: {},
 }));
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   const classes = useStyles();
 
   return (

@@ -1,50 +1,86 @@
-//React Imports
-import React from "react";
+// React Imports
+import React, { FC } from "react";
 
-//Redux Imports
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
+// Redux Imports
+import {
+  combineReducers,
+  configureStore,
+  getDefaultMiddleware,
+  ThunkAction,
+  Action,
+} from "@reduxjs/toolkit";
+import { Provider, useDispatch } from "react-redux";
 
-//Redux Persist Imports
-import { persistReducer, persistStore } from "redux-persist";
+// Redux Persist Imports
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import { PersistGate } from "redux-persist/lib/integration/react";
 import storage from "redux-persist/lib/storage";
-import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
-import { PersistGate } from "redux-persist/integration/react";
 
-//Redux Thunk Imports
-import thunk from "redux-thunk";
+// Reducer Imports
+import { displayReducer, DisplayState } from "./Redux/display.slice";
 
-//Redux Devtools Imports
-import { composeWithDevTools } from "redux-devtools-extension";
+interface State {
+  display: DisplayState;
+}
 
-//Reducer Imports
-import { display } from "./Redux/reducers";
-
-const reducers = {
-  display,
-};
-
-//The configuration for the persisted reducer
-const persistConfig = {
-  key: "root",
+const rootPersistConfig = {
+  version: 1,
   storage,
-  stateReconciler: autoMergeLevel2,
 };
 
-const rootReducer = combineReducers(reducers);
-const persistedReducer = persistReducer<any>(persistConfig, rootReducer);
+const reducers = combineReducers<State>({
+  display: displayReducer,
+});
 
-const configuredStore = createStore(
-  persistedReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+const persistedReducer = persistReducer<State>(
+  { ...rootPersistConfig, key: "root" },
+  reducers
 );
 
-const persistor = persistStore(configuredStore);
+const extraArgument = {};
 
-const ReduxStore: React.FC = ({ children }) => {
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+    thunk: {
+      extraArgument,
+    },
+  }),
+  devTools: true,
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+
+export type AppThunk = ThunkAction<
+  void,
+  RootState,
+  typeof extraArgument,
+  Action<string>
+>;
+
+export const getState = store.getState;
+
+const persistor = persistStore(store);
+
+const ReduxStore: FC = ({ children }) => {
   return (
-    <Provider store={configuredStore}>
-      <PersistGate persistor={persistor} loading={<div>Loading...</div>}>
+    <Provider store={store}>
+      <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
         {children}
       </PersistGate>
     </Provider>

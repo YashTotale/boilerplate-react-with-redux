@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 // Redux Imports
-import ReduxStore from "./store";
+import ReduxStore from "./Store";
 
 // Misc Imports
 import reportWebVitals from "./reportWebVitals";

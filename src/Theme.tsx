@@ -3,8 +3,7 @@ import React from "react";
 
 //Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { getIsDarkMode } from "./Redux/selectors";
-import { toggleDarkMode } from "./Redux/actions";
+import { getIsDarkMode, toggleDarkMode } from "./Redux";
 
 //Material UI Imports
 import {
@@ -22,6 +21,7 @@ const Theme: React.FC = ({ children }) => {
   if (isDarkMode === null && prefersDarkMode) {
     dispatch(toggleDarkMode(prefersDarkMode));
   }
+
   const theme = createMuiTheme({
     palette: {
       type: isDarkMode ? "dark" : "light",

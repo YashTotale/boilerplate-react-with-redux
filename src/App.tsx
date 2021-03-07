@@ -1,6 +1,6 @@
 //React Imports
 import { hot } from "react-hot-loader";
-import React from "react";
+import React, { FC } from "react";
 import Home from "./Pages/Home";
 
 //Material UI Imports
@@ -9,7 +9,7 @@ import Theme from "./Theme";
 //Router Imports
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-const App: React.FC = (props) => {
+const App: FC = () => {
   return (
     <Router>
       <Theme>
@@ -19,7 +19,7 @@ const App: React.FC = (props) => {
   );
 };
 
-const Routes: React.FC = (props) => {
+const Routes: FC = () => {
   return (
     <Switch>
       <Route path="/">
