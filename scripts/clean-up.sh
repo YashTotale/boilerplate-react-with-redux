@@ -4,19 +4,19 @@
 
 set -e
 
-replaceName() {
+replacer() {
   # $1 = File Name
-  # $2 = Repository Owner
-  # $3 = Repository Name
+
+  echo $1
 
   CURRENT_NAME="Yash Totale"
   CURRENT_OWNER="YashTotale"
   CURRENT_REPO="boilerplate-react-with-redux"
 
-  REPLACE_1="s/$CURRENT_NAME/$2/g"
-  REPLACE_2="s/$CURRENT_OWNER/$2/g"
-  REPLACE_3="s/$CURRENT_REPO/$3/g"
-  REPLACE_4="s/Boilerplate React with Redux/${3//[-]/ }/g"
+  REPLACE_1="s/$CURRENT_NAME/$REPO_OWNER/g"
+  REPLACE_2="s/$CURRENT_OWNER/$REPO_OWNER/g"
+  REPLACE_3="s/$CURRENT_REPO/$REPO_NAME/g"
+  REPLACE_4="s/Boilerplate React with Redux/${REPO_NAME//[-]/ }/g"
 
   if [[ "$OSTYPE" == "darwin"* ]]; then
     sed "-i" "" "-e" "$REPLACE_1" "$1"
@@ -33,8 +33,11 @@ replaceName() {
 
 
 # $1 = Repository Owner
-# $2 = Repository Name
+# REPO_OWNER = Repository Name
 
-find . -type f -name "*" | grep -v node_modules | grep 'src\|public\|package.json\|package-lock.json\|CONTRIBUTING.md\|CODEOWNERS\|AUTHORS' | grep -v '.ico\|.png' | while read -r line; do
-  replaceName $line $1 $2
+find . -type f -name "*" | grep -v node_modules | grep 'src\|public\|package.json\|package-lock.json\|CONTRIBUTING.md\|CODEOWNERS\|AUTHORS\|LICENSE.md\|.github/workflows/greetings.yml' | grep -v '.ico\|.png' | while read -r line; do
+  replacer $line
 done
+
+echo "Removing unnecessary files..."
+rm -rf scripts .github/workflows/template-cleanup.yml LICENSE.md
