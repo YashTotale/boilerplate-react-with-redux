@@ -1,5 +1,5 @@
 //React Imports
-import React from "react";
+import React, { FC } from "react";
 
 //Redux Imports
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ import {
   CssBaseline,
 } from "@material-ui/core";
 
-const Theme: React.FC = ({ children }) => {
+const Theme: FC = ({ children }) => {
   const dispatch = useDispatch();
 
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
