@@ -1,4 +1,4 @@
-# Contributing to Introspect
+# Contributing to Boilerplate React with Redux
 
 Welcome, and thank you for your interest in contributing to boilerplate-react-with-redux!
 
