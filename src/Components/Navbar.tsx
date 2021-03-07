@@ -20,9 +20,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {},
 }));
 
-interface NavbarProps {}
-
-const Navbar: FC<NavbarProps> = () => {
+const Navbar: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const theme = useTheme();

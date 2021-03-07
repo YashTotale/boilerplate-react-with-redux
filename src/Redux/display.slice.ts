@@ -24,7 +24,8 @@ const displaySlice = createSlice({
 export const { toggleDarkMode } = displaySlice.actions;
 
 // Selectors
-export const getIsDarkMode = (state: RootState) => state.display.isDarkMode;
+export const getIsDarkMode = (state: RootState): DisplayState["isDarkMode"] =>
+  state.display.isDarkMode;
 
 // Reducer
 export const displayReducer = displaySlice.reducer;
