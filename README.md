@@ -15,6 +15,9 @@
 - [React Router](https://reactrouter.com/)
 - Additional React tools such as [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 - Additional Redux tools bundled with [Redux Toolkit](https://redux-toolkit.js.org/) such as [redux-thunk](https://github.com/reduxjs/redux-thunk), [redux-persist](https://github.com/rt2zz/redux-persist), and [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
+- Linters and Formatters pre-configured such as [Prettier](https://prettier.io/), [ESLint](https://eslint.org/), [MarkdownLint](https://github.com/DavidAnson/markdownlint), and [EditorConfig](https://editorconfig.org/).
+- GitHub Actions CI/CD pipeline.
+- Git hooks with [Husky](https://typicode.github.io/husky/#/) and [Lint-Staged](https://github.com/okonet/lint-staged).
 
 ## Usage
 
