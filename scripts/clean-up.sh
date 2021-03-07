@@ -31,10 +31,6 @@ replacer() {
   fi
 }
 
-
-# $1 = Repository Owner
-# REPO_OWNER = Repository Name
-
 find . -type f -name "*" | grep -v node_modules | grep 'src\|public\|package.json\|package-lock.json\|CONTRIBUTING.md\|CODEOWNERS\|AUTHORS\|LICENSE.md\|.github/workflows/greetings.yml' | grep -v '.ico\|.png' | while read -r line; do
   replacer $line
 done
