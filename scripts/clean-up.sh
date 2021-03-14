@@ -31,9 +31,9 @@ replacer() {
   fi
 }
 
-find . -type f -name "*" | grep -v node_modules | grep 'src\|public\|package.json\|package-lock.json\|CONTRIBUTING.md\|CODEOWNERS\|AUTHORS\|LICENSE.md\|.github/workflows/greetings.yml' | grep -v '.ico\|.png' | while read -r line; do
+find . -type f -name "*" | grep -v node_modules | grep 'src\|public\|package.json\|package-lock.json\|CONTRIBUTING.md\|CODEOWNERS\|AUTHORS\|LICENSE.md\' | grep -v '.ico\|.png' | while read -r line; do
   replacer $line
 done
 
 echo "Removing unnecessary files..."
-rm -rf scripts .github/workflows/template-cleanup.yml LICENSE.md
+rm -rf scripts .github/workflows/template-cleanup.yml .github/workflows/greetings.yml LICENSE.md
